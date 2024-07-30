@@ -1,0 +1,90 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{hyperref}
+\usepackage{xcolor} % For colors
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{margin=1in}
+\renewcommand*\thesection{\arabic{section}}
+\definecolor{myBlue}{HTML}{6D351A}
+\usepackage[explicit]{titlesec}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{multirow}
+\usepackage{biblatex} 
+\usepackage{tabularx}
+\usepackage{ctable}
+\newcolumntype{C}{>{\raggedleft\arraybackslash}X}
+\newcommand{\autodot}{\ifnum\value{section}>0.\fi}
+% For custom section formatting
+% Custom commands for easy updating
+\newcommand{\Title}{Numerical Quantum Mechanics}
+\newcommand{\Subtitle}{The Institute of Mathematical Sciences}
+\newcommand{\Author}{Bhabani Sankar Tripathy}
+\newcommand{\Department}{Department of Theoretical Physics}
+%\newcommand{\Address}{Wilberforce Road, Cambridge, CB3 OWA, UK}
+%\newcommand{\Website}{http://www.damtp.cam.ac.uk/user/tong/qft.html}
+\newcommand{\Email}{tbhabanisankar@gmail.com}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\titleformat{\section}[hang]{\Large\bfseries\sffamily}%
+{\rlap{\color{myBlue}\rule[-6pt]{\textwidth}{1.2pt}}\colorbox{myBlue}{%
+		\raisebox{0pt}[13pt][3pt]{ \makebox[60pt]{% height, width
+				\fontfamily{phv}\selectfont\color{white}{\thesection}}
+}}}%
+{15pt}%
+{ \color{myBlue}#1
+	%
+}
+\titlespacing*{\section}{0pt}{3mm}{5mm}
+% Header and footer setup
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+% Configure hyperref to hide link borders
+\hypersetup{
+	colorlinks=true,       % False: boxed links; true: colored links
+	linkcolor=black,       % Color of internal links
+	citecolor=blue,        % Color of citations
+	filecolor=magenta,     % Color of file links
+	urlcolor=blue,         % Color of external links
+	pdfpagemode=UseNone,   % Do not display bookmarks
+	pdfstartview=FitH,     % Fit to width of page
+	hidelinks              % Hide links borders
+}
+% Custom section formatting
+
+\begin{document}
+	
+	% Title
+	\begin{flushleft}
+		\vspace*{6.0cm} % Adjust this value to start from the middle
+		\textcolor{black}{\textbf{\LARGE \Title}}\\
+		\vspace{0.5cm}
+		\textcolor{darkgray}{\textbf{\Subtitle}}\\
+		\vspace{0.5cm}
+		\rule{\textwidth}{1.4pt} % Single horizontal line
+	\end{flushleft}
+	
+	% Author details
+	\vspace{0.5cm} % Adjust this value for the vertical space between the line and author details
+	\begin{flushleft}
+		\textcolor{black}{\large{\textbf{\Author}}}\\
+		\textcolor{auburn}{\Department,}\\
+		%\Centre,\\
+		%\Address\\
+		\vspace{0.5cm}
+		%\href{\Website}{\Website}\\
+		\textcolor{auburn}{\href{mailto:\Email}{\Email}}
+	\end{flushleft}
+	\newpage
+	
+	\tableofcontents
+	\newpage
+	\chapter{Revisiting Quantum Mechanics}
+	We are basically working with boundary value problem.Lets take an example.
+	\section{Boundary value Problem}
+	Let's take two first order differential equation,\\
+	
+	$\frac{dy}{dx}=f_1(x,y,z)$ \hspace{3cm} $\frac{dz}{dx}=f_2(x,y,z)$
+    
+	
+\end{document}
